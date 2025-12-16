@@ -1,0 +1,158 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% Modern CV theme
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% Character encoding
+\usepackage[utf8]{inputenc}
+
+% Adjust page margins
+\usepackage[scale=0.85]{geometry}
+\setlength{\hintscolumnwidth}{3cm}
+
+% Personal data
+\name{Saeed}{Neamatallah}
+\title{AI Engineer \& Deep Learning Specialist}
+\email{saeed.neamatallah@example.com}
+\social[linkedin]{saeed-neamtallah}
+\social[github]{SaeedNeamtallah}
+\phone[mobile]{+20~XXX~XXX~XXXX}
+\extrainfo{Location: Egypt}
+
+% Custom commands
+\newcommand{\tech}[1]{\textit{\small #1}}
+
+\begin{document}
+
+\makecvtitle
+
+\section{Professional Summary}
+\cvitem{}{AI Engineer specializing in \textbf{Large Language Models}, \textbf{Retrieval-Augmented Generation systems}, and \textbf{production-grade machine learning solutions}. Expert in designing and deploying autonomous AI agents that bridge cutting-edge research with production reliability. Proven track record of delivering measurable impact through end-to-end ML system design, with national recognition in competitive AI challenges.}
+
+\section{Experience}
+
+\cventry{Apr 2024 -- Oct 2024}{Machine Learning Engineer Intern}{Digital Egypt Pioneers Initiative (DEPI)}{Egypt}{}{
+High-intensity program specializing in deep learning, modeling pipelines, and production workflows.
+\begin{itemize}
+    \item Developed neural architectures (CNNs, RNNs) achieving 90\%+ accuracy on production datasets
+    \item Designed reproducible training pipelines with hyperparameter tuning and experiment tracking
+    \item Implemented transfer learning strategies to accelerate model experimentation and convergence
+    \item Delivered stakeholder-ready reports connecting model metrics to measurable business impact
+\end{itemize}
+\tech{Technologies: PyTorch, TensorFlow, MLOps, Python, Weights \& Biases}
+}
+
+\cventry{May 2024 -- Sep 2024}{Machine Learning Engineer Intern}{Microsoft Student Club · EELU}{Egypt}{}{
+Focused on deploying ML models with Azure tooling and reinforcing production best practices.
+\begin{itemize}
+    \item Trained and evaluated models on Azure ML with automated retraining and monitoring loops
+    \item Built NLP-focused solutions leveraging Azure Cognitive Services API integrations
+    \item Documented architecture decisions, performance benchmarks, and deployment playbooks
+    \item Implemented CI/CD pipelines for continuous model deployment and testing
+\end{itemize}
+\tech{Technologies: Azure ML, NLP, Azure Cognitive Services, CI/CD, Python}
+}
+
+\section{Featured Projects}
+
+\cventry{}{Production RAG Pipeline}{\textbf{Live System}}{}{}{
+Architected enterprise-ready Retrieval-Augmented Generation system handling 10K+ documents with sub-200ms response times.
+\begin{itemize}
+    \item Implemented semantic chunking, hybrid search (BM25 + vector), and cross-encoder re-ranking
+    \item Achieved 95\% retrieval accuracy with streaming responses and Redis caching layer
+    \item Built scalable FastAPI backend with PostgreSQL/pgvector for efficient vector operations
+    \item Integrated OpenAI API and Ollama for flexible LLM inference options
+\end{itemize}
+\tech{Stack: FastAPI, Docker, PostgreSQL, pgvector, OpenAI API, Ollama, Redis}
+}
+
+\cventry{}{Domain-Tuned LLM}{Fine-tuning Project}{}{}{
+Fine-tuned open-weight LLMs using parameter-efficient methods for domain-specific applications.
+\begin{itemize}
+    \item Implemented LoRA/PEFT techniques for memory-efficient fine-tuning of large models
+    \item Developed custom evaluation harnesses and safety filters for production deployment
+    \item Optimized inference pipeline reducing latency by 40\% while maintaining accuracy
+    \item Created comprehensive documentation for model versioning and reproducibility
+\end{itemize}
+\tech{Stack: Transformers, LoRA, PyTorch, Hugging Face, Python}
+}
+
+\cventry{}{Micrograd Engine}{Educational Project}{}{}{
+Built complete autograd engine from scratch with computational graphs and automatic differentiation.
+\begin{itemize}
+    \item Implemented gradient-based optimization and backpropagation from first principles
+    \item Developed neural network layers and activation functions mirroring PyTorch internals
+    \item Created comprehensive test suite validating gradient computations and model training
+    \item Deepened understanding of automatic differentiation systems used in modern frameworks
+\end{itemize}
+\tech{Stack: Python, NumPy, Autograd, Neural Networks}
+}
+
+\cventry{}{Autonomous AI Agent}{Multi-Agent System}{}{}{
+Built autonomous AI agent with tool-use capabilities, memory systems, and multi-step reasoning.
+\begin{itemize}
+    \item Implemented ReAct prompting pattern and function calling for complex task execution
+    \item Designed persistent memory systems for context retention across conversations
+    \item Integrated multiple tools and APIs for web search, data processing, and automation
+    \item Achieved robust error handling and graceful degradation for production reliability
+\end{itemize}
+\tech{Stack: LangChain, OpenAI API, Python, Memory Systems, Function Calling}
+}
+
+\section{Achievements \& Recognition}
+
+\cventry{Mar 2025}{EEG Brain-Computer Interface Competition}{\textbf{Top 12 Nationwide}}{}{}{
+Ranked in top 6\% nationally out of 200+ competing teams.
+\begin{itemize}
+    \item Engineered sophisticated signal-processing pipelines for EEG pattern recognition
+    \item Developed deep learning models with superior accuracy for brain-computer interfaces
+    \item Demonstrated expertise in biomedical AI applications and complex signal analysis
+    \item Showcased ability to perform under competitive pressure with limited timeframes
+\end{itemize}
+}
+
+\section{Technical Skills}
+
+\cvitem{AI \& ML}{Large Language Models, RAG Systems, AI Agents, Transformers, Transfer Learning, Neural Networks, Deep Learning, NLP, Computer Vision}
+
+\cvitem{Frameworks}{PyTorch, TensorFlow, Hugging Face, LangChain, Scikit-learn, Weights \& Biases, OpenAI API}
+
+\cvitem{MLOps \& Tools}{Docker, Git, Azure ML, PostgreSQL, Redis, pgvector, FastAPI, CI/CD, Linux}
+
+\cvitem{Languages}{Python (Expert), SQL, Bash}
+
+\cvitem{Specialties}{
+\begin{itemize}
+    \item \textbf{LLM Engineering:} Fine-tuning, prompt engineering, evaluation, safety filtering
+    \item \textbf{RAG Systems:} Vector databases, semantic search, hybrid retrieval, re-ranking
+    \item \textbf{Production ML:} Model deployment, monitoring, automated retraining, scalability
+    \item \textbf{Signal Processing:} EEG analysis, biomedical AI, time-series classification
+\end{itemize}
+}
+
+\section{Certifications}
+
+\cventry{2024}{Data Science Program}{Digital Egypt Pioneers Initiative (DEPI)}{}{}{}
+\cventry{2024}{Microsoft Azure ML}{Microsoft Student Club}{}{}{}
+\cventry{2024}{Natural Language Processing Specialization}{Online Learning Platform}{}{}{}
+\cventry{2024}{Deep Learning MiniCamp}{Intensive Program}{}{}{}
+\cventry{2024}{Machine Learning Engineering}{ML Specialization}{}{}{}
+
+\section{Education}
+
+\cventry{}{Bachelor's Degree}{Egyptian E-Learning University (EELU)}{Egypt}{}{
+\textit{Relevant coursework: Machine Learning, Deep Learning, Data Structures, Algorithms, Statistics}
+}
+
+\section{Languages}
+
+\cvitemwithcomment{Arabic}{Native}{}
+\cvitemwithcomment{English}{Professional Working Proficiency}{Technical communication and documentation}
+
+\section{Additional Information}
+
+\cvitem{Interests}{Open-source contributions, AI research, competitive programming, building in public}
+\cvitem{Profile}{Passionate about transforming research breakthroughs into dependable products with measurable impact. Strong focus on production-grade systems, scalability, and continuous iteration based on real-world feedback.}
+
+\end{document}
