@@ -295,7 +295,7 @@
 
         .hero-image-wrapper {
             position: relative;
-            max-width: 420px;
+            max-width: 550px;
             margin: 0 auto;
         }
 
@@ -340,6 +340,7 @@
         .floating-stats p { color: var(--gray); font-weight: 600; font-size: 0.9rem; }
         .stat-1 { top: 12%; right: -12%; }
         .stat-2 { bottom: 10%; left: -8%; }
+        .stat-3 { top: 45%; right: -15%; }
 
         .section-header { text-align: center; margin-bottom: 3.5rem; }
 
@@ -372,7 +373,7 @@
         /* Stats Counter Section */
         .stats-section {
             background: var(--gradient-1);
-            padding: 5rem 2rem;
+            padding: .5rem 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -390,9 +391,9 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            max-width: 1000px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -830,214 +831,71 @@
             gap: 0.3rem;
         }
 
-        /* ===== TECHNICAL STACK SECTION - Premium Grid ===== */
+        /* ===== TECHNICAL STACK SECTION - Compact Design ===== */
         .skills {
-            background: linear-gradient(180deg, var(--bg) 0%, var(--white) 50%, var(--bg) 100%);
-            position: relative;
-            overflow: hidden;
+            background: var(--bg);
+            padding: 4rem 0;
         }
 
-        .skills::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .skills-wrapper {
+        .skills-compact-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            max-width: 1100px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .skills-main {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .skill-category {
+        .skill-compact-card {
             background: var(--white);
-            border-radius: 24px;
-            padding: 2rem;
-            box-shadow: 0 20px 50px -15px rgba(15, 23, 42, 0.1);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s var(--transition-smooth);
-            border: 1px solid rgba(99, 102, 241, 0.08);
-        }
-
-        .skill-category::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-1);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .skill-category:hover::before { opacity: 1; }
-
-        .skill-category:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px -20px rgba(99, 102, 241, 0.2);
-        }
-
-        .skill-category:nth-child(2)::before { background: var(--gradient-2); }
-        .skill-category:nth-child(3)::before { background: var(--gradient-3); }
-        .skill-category:nth-child(4)::before { background: var(--gradient-4); }
-
-        .skill-category-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-icon-wrapper {
-            width: 56px;
-            height: 56px;
             border-radius: 16px;
-            background: var(--gradient-1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.4);
-        }
-
-        .skill-category:nth-child(2) .skill-icon-wrapper { background: var(--gradient-2); }
-        .skill-category:nth-child(3) .skill-icon-wrapper { background: var(--gradient-3); }
-        .skill-category:nth-child(4) .skill-icon-wrapper { background: var(--gradient-4); }
-
-        .skill-icon-wrapper i {
-            font-size: 1.5rem;
-            color: var(--white);
-        }
-
-        .skill-category h3 {
-            font-size: 1.3rem;
-            margin: 0;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.7rem;
-        }
-
-        .skill-item {
-            padding: 0.6rem 1.2rem;
-            border-radius: 12px;
-            background: rgba(99, 102, 241, 0.06);
-            font-weight: 600;
-            color: var(--dark);
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .skill-item:hover {
-            background: var(--gradient-1);
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        .skills-visual {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .skill-meter {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 15px 40px -15px rgba(15, 23, 42, 0.1);
-        }
-
-        .skill-meter-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.8rem;
-        }
-
-        .skill-meter-header span:first-child {
-            font-weight: 600;
-            color: var(--dark);
-        }
-
-        .skill-meter-header span:last-child {
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .skill-meter-bar {
-            height: 10px;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: 999px;
-            overflow: hidden;
-        }
-
-        .skill-meter-fill {
-            height: 100%;
-            background: var(--gradient-1);
-            border-radius: 999px;
-            transition: width 1.5s ease;
-        }
-
-        .skill-meter-fill.fill-95 { width: 95%; }
-        .skill-meter-fill.fill-92 { width: 92%; }
-        .skill-meter-fill.fill-88 { width: 88%; }
-        .skill-meter-fill.fill-85 { width: 85%; }
-
-        .tech-stack-visual {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 2.5rem;
+            padding: 1.8rem 1.5rem;
             text-align: center;
-            box-shadow: 0 20px 50px -15px rgba(15, 23, 42, 0.1);
+            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(99, 102, 241, 0.1);
         }
 
-        .tech-icons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+        .skill-compact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.15);
+            border-color: var(--primary);
         }
 
-        .tech-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, var(--bg) 0%, rgba(99, 102, 241, 0.1) 100%);
+        .skill-compact-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1rem;
+            border-radius: 12px;
+            background: var(--gradient-1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            transition: all 0.3s ease;
+            font-size: 1.4rem;
+            color: var(--white);
         }
 
-        .tech-icon:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 15px 30px -10px rgba(99, 102, 241, 0.3);
+        .skill-compact-card:nth-child(2) .skill-compact-icon { background: var(--gradient-2); }
+        .skill-compact-card:nth-child(3) .skill-compact-icon { background: var(--gradient-3); }
+        .skill-compact-card:nth-child(4) .skill-compact-icon { background: var(--gradient-4); }
+
+        .skill-compact-card h4 {
+            font-size: 1.1rem;
+            margin: 0 0 0.8rem;
+            color: var(--dark);
         }
 
-        .tech-stack-visual p {
+        .skill-compact-list {
+            font-size: 0.85rem;
             color: var(--gray);
-            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 968px) {
+            .skills-compact-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 580px) {
+            .skills-compact-grid { grid-template-columns: 1fr; }
         }
 
         /* ===== EXPERIENCE SECTION - Premium Timeline ===== */
@@ -1217,9 +1075,10 @@
             font-weight: 600;
         }
 
-        /* ===== ACHIEVEMENTS SECTION - Showcase Style ===== */
+        /* ===== ACHIEVEMENTS SECTION - Premium Centered ===== */
         .achievements {
-            background: var(--dark);
+            background: linear-gradient(135deg, #2d3561 0%, #3d4a7a 50%, #4a5899 100%);
+            padding: 5rem 0;
             position: relative;
             overflow: hidden;
         }
@@ -1227,161 +1086,115 @@
         .achievements::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(ellipse at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .achievements .section-title { color: var(--white); }
         .achievements .section-subtitle { color: rgba(255, 255, 255, 0.7); }
 
-        .achievements-showcase {
-            position: relative;
-            z-index: 1;
-        }
-
-        .achievement-main {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 4rem;
-            align-items: center;
-            max-width: 1100px;
+        .achievement-showcase {
+            max-width: 800px;
             margin: 0 auto;
-        }
-
-        .achievement-visual {
+            text-align: center;
             position: relative;
-        }
-
-        .achievement-image-wrapper {
-            position: relative;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.5);
-        }
-
-        .achievement-image-wrapper::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, transparent 50%);
             z-index: 1;
         }
 
-        .achievement-image {
-            width: 100%;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .achievement-visual:hover .achievement-image {
-            transform: scale(1.05);
-        }
-
-        .achievement-badge {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 100px;
-            height: 100px;
-            background: var(--gradient-1);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
+        .achievement-badge-large {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            box-shadow: 0 20px 50px -10px rgba(99, 102, 241, 0.5);
-            z-index: 2;
-            animation: pulse-glow 2s ease-in-out infinite;
+            gap: 1rem;
+            background: var(--gradient-1);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 60px -15px rgba(99, 102, 241, 0.5);
         }
 
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 20px 50px -10px rgba(99, 102, 241, 0.5); }
-            50% { box-shadow: 0 25px 60px -5px rgba(99, 102, 241, 0.7); }
-        }
-
-        .achievement-badge span:first-child {
+        .achievement-badge-large .trophy { font-size: 2rem; }
+        
+        .achievement-badge-large .rank {
             font-size: 2rem;
             font-weight: 800;
             color: var(--white);
-            line-height: 1;
         }
 
-        .achievement-badge span:last-child {
-            font-size: 0.7rem;
+        .achievement-badge-large .rank-text {
+            font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.9);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
-        .achievement-content {
+        .achievement-title {
+            font-size: 1.8rem;
             color: var(--white);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
-        .achievement-trophy {
-            font-size: 3.5rem;
+        .achievement-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .achievement-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
             margin-bottom: 1.5rem;
-            display: inline-block;
-            animation: float 3s ease-in-out infinite;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .achievement-content h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            line-height: 1.3;
+        .achievement-gallery img {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .achievement-content h3 span {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .achievement-gallery img:hover {
+            transform: scale(1.02);
+            border-color: var(--primary);
         }
 
-        .achievement-description {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.15rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
+        .achievement-tags {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
         }
 
-        .achievement-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .ach-stat {
-            text-align: center;
-            padding: 1.2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .achievement-tags span {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
             transition: all 0.3s ease;
         }
 
-        .ach-stat:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-        }
-
-        .ach-stat h4 {
-            font-size: 1.8rem;
+        .achievement-tags span:hover {
             background: var(--gradient-1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.3rem;
+            border-color: transparent;
         }
 
-        .ach-stat p {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.6);
+        @media (max-width: 600px) {
+            .achievement-gallery { grid-template-columns: 1fr; }
+            .achievement-badge-large { padding: 0.8rem 1.5rem; }
+            .achievement-badge-large .rank { font-size: 1.5rem; }
         }
 
         .achievement-tags {
@@ -2365,7 +2178,7 @@
                     <a href="#projects" class="btn btn-primary">
                         View My Work <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="RenderCV_Classic_Theme__2_.pdf" download class="btn btn-secondary">
+                    <a href="saeed_cv_ai_eng.pdf" download class="btn btn-secondary">
                         <i class="fas fa-download"></i> Download CV
                     </a>
                 </div>
@@ -2373,37 +2186,19 @@
             <div class="hero-image">
                 <div class="hero-image-wrapper">
                     <img src="mypic.jpg" alt="Saeed Neamatallah portrait">
-                    <div class="floating-stats stat-1">
-                        <h4>2+</h4>
-                        <p>Years Experience</p>
-                    </div>
-                    <div class="floating-stats stat-2">
-                        <h4>Top 12</h4>
+                    <a href="#projects" class="floating-stats stat-1" style="text-decoration: none; cursor: pointer;">
+                        <h4>3+</h4>
+                        <p>Projects</p>
+                    </a>
+                    <a href="#achievements" class="floating-stats stat-2" style="text-decoration: none; cursor: pointer;">
+                        <h4>Top 13</h4>
                         <p>National Ranking</p>
-                    </div>
+                    </a>
+                    <a href="#certificates" class="floating-stats stat-3" style="text-decoration: none; cursor: pointer;">
+                        <h4>7+</h4>
+                        <p>Certificates</p>
+                    </a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Counter Section -->
-    <section class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-number" data-target="2">0</span>
-                <span class="stat-label">Years Experience</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="15">0</span>
-                <span class="stat-label">Projects Completed</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="12">0</span>
-                <span class="stat-label">National Ranking</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="5">0</span>
-                <span class="stat-label">Certifications</span>
             </div>
         </div>
     </section>
@@ -2465,22 +2260,8 @@
                 <div class="featured-badge">
                     <i class="fas fa-fire"></i> Featured Project
                 </div>
-                <div class="featured-visual">
-                    <i class="fas fa-search"></i>
-                    <div class="featured-metrics">
-                        <div class="metric">
-                            <span class="metric-value">95%</span>
-                            <span class="metric-label">Retrieval Accuracy</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-value">&lt;200ms</span>
-                            <span class="metric-label">Response Time</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-value">10K+</span>
-                            <span class="metric-label">Documents</span>
-                        </div>
-                    </div>
+                <div class="featured-visual" style="padding: 0;">
+                    <img src="Screenshot_17-12-2025_64530_github.com.jpeg" alt="RAG Project Screenshot" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <div class="featured-content">
                     <h3>Production RAG Pipeline <span class="live-badge">🔴 Live</span></h3>
@@ -2498,11 +2279,8 @@
                         <span class="tech-tag">Redis</span>
                     </div>
                     <div class="featured-links">
-                        <a href="https://github.com/SaeedNeamtallah/mini-rag-app" target="_blank" rel="noopener" class="btn btn-primary">
+                        <a href="https://github.com/SaeedNeamtallah/Rag-System-Project" target="_blank" rel="noopener" class="btn btn-primary">
                             <i class="fab fa-github"></i> View Code
-                        </a>
-                        <a href="project-rag.html" class="btn btn-secondary">
-                            <i class="fas fa-file-alt"></i> Case Study
                         </a>
                     </div>
                 </div>
@@ -2519,9 +2297,8 @@
             <!-- Project Grid -->
             <div class="projects-grid">
                 <article class="project-card" data-category="dl">
-                    <div class="project-header project-header-2">
-                        <span class="project-category">Deep Learning</span>
-                        <i class="fas fa-network-wired"></i>
+                    <div class="project-header project-header-2" style="padding: 0; height: 180px;">
+                        <img src="Screenshot_17-12-2025_73848_github.com.jpeg" alt="Micrograd Engine" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-body">
                         <h3>Micrograd Engine</h3>
@@ -2536,8 +2313,8 @@
                             <span class="tech-tag">Neural Nets</span>
                         </div>
                         <div class="project-footer">
-                            <a href="project-micrograd.html" class="project-link">
-                                Case Study <i class="fas fa-arrow-right"></i>
+                            <a href="https://github.com/SaeedNeamtallah/micrograd" target="_blank" rel="noopener" class="project-link">
+                                View Project <i class="fas fa-arrow-right"></i>
                             </a>
                             <div class="project-stats">
                                 <span><i class="fas fa-star"></i> 12</span>
@@ -2565,9 +2342,6 @@
                             <span class="tech-tag">Evaluation</span>
                         </div>
                         <div class="project-footer">
-                            <a href="project-llm.html" class="project-link">
-                                Case Study <i class="fas fa-arrow-right"></i>
-                            </a>
                             <div class="project-stats">
                                 <span><i class="fas fa-star"></i> 8</span>
                                 <span><i class="fas fa-code-branch"></i> 2</span>
@@ -2576,44 +2350,16 @@
                     </div>
                 </article>
 
-                <article class="project-card" data-category="llm">
-                    <div class="project-header project-header-4">
-                        <span class="project-category">AI Agents</span>
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="project-body">
-                        <h3>Autonomous AI Agent</h3>
-                        <p>
-                            Built an autonomous AI agent with tool-use capabilities, memory systems, and multi-step reasoning. 
-                            Implements ReAct prompting and function calling for complex task execution.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">LangChain</span>
-                            <span class="tech-tag">OpenAI</span>
-                            <span class="tech-tag">Memory</span>
-                            <span class="tech-tag">Tools</span>
-                        </div>
-                        <div class="project-footer">
-                            <a href="https://github.com/SaeedNeamtallah" target="_blank" rel="noopener" class="project-link">
-                                View Project <i class="fas fa-arrow-right"></i>
-                            </a>
-                            <div class="project-stats">
-                                <span><i class="fas fa-star"></i> 15</span>
-                                <span><i class="fas fa-code-branch"></i> 4</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+
 
                 <article class="project-card" data-category="dl">
-                    <div class="project-header project-header-5">
-                        <span class="project-category">Signal Processing</span>
-                        <i class="fas fa-brain"></i>
+                    <div class="project-header project-header-5" style="padding: 0; height: 180px;">
+                        <img src="Screenshot_17-12-2025_71711_www.kaggle.com.jpeg" alt="EEG Signal Classifier" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="project-body">
                         <h3>EEG Signal Classifier</h3>
                         <p>
-                            Top 12 nationally in BCI competition. Built signal processing pipelines and deep learning models 
+                            Top 13 nationally in BCI competition. Built signal processing pipelines and deep learning models 
                             for EEG pattern recognition, achieving superior accuracy in brain-computer interface classification.
                         </p>
                         <div class="project-tech">
@@ -2623,11 +2369,8 @@
                             <span class="tech-tag">Competition</span>
                         </div>
                         <div class="project-footer">
-                            <a href="https://github.com/SaeedNeamtallah" target="_blank" rel="noopener" class="project-link">
-                                View Project <i class="fas fa-arrow-right"></i>
-                            </a>
                             <div class="project-stats">
-                                <span><i class="fas fa-trophy"></i> Top 12</span>
+                                <span><i class="fas fa-trophy"></i> Top 13</span>
                             </div>
                         </div>
                     </div>
@@ -2643,97 +2386,29 @@
         </div>
     </section>
 
-    <section class="skills scroll-reveal" id="skills">
+    <section class="achievements scroll-reveal" id="achievements">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Technical Stack</h2>
-                <p class="section-subtitle">Tools and disciplines I leverage to ship resilient AI systems.</p>
+                <h2 class="section-title">Achievements</h2>
+                <p class="section-subtitle">Recognition earned through competitive problem solving.</p>
             </div>
-            <div class="skills-wrapper">
-                <div class="skills-main">
-                    <div class="skill-category">
-                        <div class="skill-category-header">
-                            <div class="skill-icon-wrapper">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h3>AI &amp; Deep Learning</h3>
-                        </div>
-                        <div class="skill-list">
-                            <span class="skill-item">Large Language Models</span>
-                            <span class="skill-item">AI Agents</span>
-                            <span class="skill-item">Transformers</span>
-                            <span class="skill-item">Attention Mechanisms</span>
-                            <span class="skill-item">Neural Networks</span>
-                            <span class="skill-item">Transfer Learning</span>
-                            <span class="skill-item">Deep Learning</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <div class="skill-category-header">
-                            <div class="skill-icon-wrapper">
-                                <i class="fas fa-tools"></i>
-                            </div>
-                            <h3>Frameworks &amp; Tooling</h3>
-                        </div>
-                        <div class="skill-list">
-                            <span class="skill-item">PyTorch</span>
-                            <span class="skill-item">TensorFlow</span>
-                            <span class="skill-item">Hugging Face</span>
-                            <span class="skill-item">LangChain</span>
-                            <span class="skill-item">Vector DBs</span>
-                            <span class="skill-item">Scikit-learn</span>
-                            <span class="skill-item">Weights &amp; Biases</span>
-                        </div>
-                    </div>
+            <div class="achievement-showcase">
+                <div class="achievement-badge-large">
+                    <span class="trophy">🏆</span>
+                    <span class="rank">#13</span>
+                    <span class="rank-text">National Rank</span>
                 </div>
-                <div class="skills-visual">
-                    <div class="skill-meter">
-                        <div class="skill-meter-header">
-                            <span>Deep Learning</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-meter-bar">
-                            <div class="skill-meter-fill fill-95"></div>
-                        </div>
-                    </div>
-                    <div class="skill-meter">
-                        <div class="skill-meter-header">
-                            <span>NLP / LLMs</span>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-meter-bar">
-                            <div class="skill-meter-fill fill-92"></div>
-                        </div>
-                    </div>
-                    <div class="skill-meter">
-                        <div class="skill-meter-header">
-                            <span>MLOps</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-meter-bar">
-                            <div class="skill-meter-fill fill-85"></div>
-                        </div>
-                    </div>
-                    <div class="skill-meter">
-                        <div class="skill-meter-header">
-                            <span>Computer Vision</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-meter-bar">
-                            <div class="skill-meter-fill fill-88"></div>
-                        </div>
-                    </div>
-                    <div class="tech-stack-visual">
-                        <div class="tech-icons">
-                            <div class="tech-icon"><i class="fab fa-python"></i></div>
-                            <div class="tech-icon"><i class="fas fa-fire"></i></div>
-                            <div class="tech-icon"><i class="fas fa-database"></i></div>
-                            <div class="tech-icon"><i class="fab fa-git-alt"></i></div>
-                            <div class="tech-icon"><i class="fas fa-cloud"></i></div>
-                            <div class="tech-icon"><i class="fas fa-terminal"></i></div>
-                        </div>
-                        <p>Python · PyTorch · SQL · Git · Azure · Linux</p>
-                    </div>
+                <h3 class="achievement-title">EEG Brain-Computer Interface Competition</h3>
+                <p class="achievement-subtitle">Top <span style="font-size: 1.4em; font-weight: 700; color: #ffd700;">13</span> out of <span style="font-size: 1.4em; font-weight: 700; color: #ffd700;">200+</span> teams · Kaggle · March 2025</p>
+                <div class="achievement-gallery">
+                    <img src="Screenshot_17-12-2025_7136_www.kaggle.com.jpeg" alt="Competition Leaderboard">
+                    <img src="Screenshot_17-12-2025_71711_www.kaggle.com.jpeg" alt="Competition Details">
+                </div>
+                <div class="achievement-tags">
+                    <span>Signal Processing</span>
+                    <span>Deep Learning</span>
+                    <span>EEG/BCI</span>
+                    <span>PyTorch</span>
                 </div>
             </div>
         </div>
@@ -2835,52 +2510,32 @@
         </div>
     </section>
 
-    <section class="achievements scroll-reveal" id="achievements">
+    <section class="skills scroll-reveal" id="skills">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Achievements</h2>
-                <p class="section-subtitle">Recognition earned through competitive problem solving and innovation.</p>
+                <h2 class="section-title">Technical Stack</h2>
+                <p class="section-subtitle">Core technologies powering AI solutions</p>
             </div>
-            <div class="achievements-showcase">
-                <div class="achievement-main">
-                    <div class="achievement-visual">
-                        <div class="achievement-image-wrapper">
-                            <img src="image.png" alt="EEG Competition certificate" class="achievement-image">
-                        </div>
-                        <div class="achievement-badge">
-                            <span>#12</span>
-                            <span>Nationwide</span>
-                        </div>
-                    </div>
-                    <div class="achievement-content">
-                        <div class="achievement-trophy">🏆</div>
-                        <h3>EEG Brain-Computer Interface <span>Competition</span></h3>
-                        <p class="achievement-description">
-                            Ranked <strong>Top 12 nationally</strong> out of 200+ teams in March 2025. Engineered sophisticated 
-                            signal-processing pipelines and deep learning models that extracted meaningful patterns from EEG data 
-                            with superior accuracy, demonstrating expertise in biomedical AI applications.
-                        </p>
-                        <div class="achievement-stats">
-                            <div class="ach-stat">
-                                <h4>200+</h4>
-                                <p>Teams Competed</p>
-                            </div>
-                            <div class="ach-stat">
-                                <h4>Top 6%</h4>
-                                <p>National Ranking</p>
-                            </div>
-                            <div class="ach-stat">
-                                <h4>2025</h4>
-                                <p>Competition Year</p>
-                            </div>
-                        </div>
-                        <div class="achievement-tags">
-                            <span class="tag">Signal Processing</span>
-                            <span class="tag">Neural Networks</span>
-                            <span class="tag">BCI Technology</span>
-                            <span class="tag">AI Innovation</span>
-                        </div>
-                    </div>
+            <div class="skills-compact-grid">
+                <div class="skill-compact-card">
+                    <div class="skill-compact-icon"><i class="fas fa-brain"></i></div>
+                    <h4>AI & ML</h4>
+                    <div class="skill-compact-list">LLMs · Transformers · Neural Nets · RAG · Agents</div>
+                </div>
+                <div class="skill-compact-card">
+                    <div class="skill-compact-icon"><i class="fab fa-python"></i></div>
+                    <h4>Frameworks</h4>
+                    <div class="skill-compact-list">PyTorch · TensorFlow · HuggingFace · LangChain</div>
+                </div>
+                <div class="skill-compact-card">
+                    <div class="skill-compact-icon"><i class="fas fa-database"></i></div>
+                    <h4>Data & Ops</h4>
+                    <div class="skill-compact-list">PostgreSQL · Redis · Docker · Azure · Git</div>
+                </div>
+                <div class="skill-compact-card">
+                    <div class="skill-compact-icon"><i class="fas fa-code"></i></div>
+                    <h4>Languages</h4>
+                    <div class="skill-compact-list">Python · SQL · Bash · FastAPI · REST APIs</div>
                 </div>
             </div>
         </div>
@@ -2893,6 +2548,26 @@
                 <p class="section-subtitle">Ongoing learning across AI, ML, and data science disciplines.</p>
             </div>
             <div class="certificates-grid">
+                <div class="certificate-card">
+                    <div class="certificate-image-wrapper">
+                        <img src="1000086-Saeed Neamatallah-Machine Learning Diploma.jpg" alt="Machine Learning Diploma" class="certificate-image">
+                        <div class="certificate-overlay">
+                            <span class="cert-view-btn"><i class="fas fa-expand"></i> View</span>
+                        </div>
+                    </div>
+                    <div class="certificate-body">
+                        <span class="cert-category">Machine Learning</span>
+                        <h3>Machine Learning Diploma</h3>
+                        <div class="cert-issuer">
+                            <i class="fas fa-award"></i>
+                            CSKILLED ACADEMY
+                        </div>
+                        <div class="cert-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            2025
+                        </div>
+                    </div>
+                </div>
                 <div class="certificate-card">
                     <div class="certificate-image-wrapper">
                         <img src="depi-certificate.jpg" alt="DEPI Data Science Certificate" class="certificate-image">
@@ -2921,8 +2596,8 @@
                         </div>
                     </div>
                     <div class="certificate-body">
-                        <span class="cert-category">Cloud ML</span>
-                        <h3>Microsoft Azure ML</h3>
+                        <span class="cert-category">Computer Vision</span>
+                        <h3>DeepLearning for Computer Vision</h3>
                         <div class="cert-issuer">
                             <i class="fab fa-microsoft"></i>
                             Microsoft Student Club
@@ -2993,6 +2668,27 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-image-wrapper">
+                        <img src="1000086-Saeed Neamatallah-Machine Learning Diploma.jpg" alt="Python and Problem Solving" class="certificate-image">
+                        <div class="certificate-overlay">
+                            <span class="cert-view-btn"><i class="fas fa-expand"></i> View</span>
+                        </div>
+                    </div>
+                    <div class="certificate-body">
+                        <span class="cert-category">Programming</span>
+                        <h3>Python and Problem Solving</h3>
+                        <div class="cert-issuer">
+                            <i class="fas fa-code"></i>
+                            CSKILLED ACADEMY
+                        </div>
+                        <div class="cert-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            2025
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="certificates-cta">
                 <a href="https://linkedin.com/in/saeed-neamtallah" target="_blank" rel="noopener">
@@ -3002,185 +2698,20 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- What People Say Section -->
     <section class="testimonials scroll-reveal" id="testimonials">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">What People Say</h2>
-                <p class="section-subtitle">Feedback from mentors, colleagues, and collaborators I've had the privilege to work with.</p>
+                <p class="section-subtitle">Feedback from mentors, colleagues, and collaborators.</p>
             </div>
-            <div class="testimonials-container">
-                <div class="testimonials-track">
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote-icon">
-                            <i class="fas fa-quote-left"></i>
-                        </div>
-                        <p class="testimonial-content">
-                            "Saeed demonstrates exceptional understanding of deep learning fundamentals. His RAG pipeline implementation 
-                            showed remarkable attention to production-grade architecture and best practices."
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">AM</div>
-                            <div class="author-info">
-                                <h4>Ahmed Mohamed</h4>
-                                <p>ML Lead, DEPI Program</p>
-                                <div class="testimonial-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote-icon">
-                            <i class="fas fa-quote-left"></i>
-                        </div>
-                        <p class="testimonial-content">
-                            "A quick learner with a strong foundation in ML engineering. Saeed's work on Azure ML deployments 
-                            exceeded expectations, delivering reliable and scalable solutions."
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">SK</div>
-                            <div class="author-info">
-                                <h4>Sara Khalil</h4>
-                                <p>Mentor, Microsoft Student Club</p>
-                                <div class="testimonial-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote-icon">
-                            <i class="fas fa-quote-left"></i>
-                        </div>
-                        <p class="testimonial-content">
-                            "Outstanding performance in the EEG competition. Saeed's signal processing approach and model architecture 
-                            showed creativity and deep technical expertise."
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">MH</div>
-                            <div class="author-info">
-                                <h4>Mohamed Hassan</h4>
-                                <p>BCI Competition Organizer</p>
-                                <div class="testimonial-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div style="text-align: center;">
+                <img src="peoplesay.jpg" alt="What People Say" style="max-width: 100%; border-radius: 16px; box-shadow: 0 20px 50px -15px rgba(0,0,0,0.3);">
             </div>
         </div>
     </section>
 
-    <!-- GitHub Activity Section -->
-    <section class="github-section scroll-reveal" id="github">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Open Source Contributions</h2>
-                <p class="section-subtitle">Building in public. Check out my latest work and contributions on GitHub.</p>
-            </div>
-            <div class="github-profile">
-                <div class="github-user">
-                    <div class="github-avatar-wrapper">
-                        <div class="github-avatar">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="github-status">
-                            <i class="fas fa-check"></i>
-                        </div>
-                    </div>
-                    <h3 class="github-username">Saeed Neamatallah</h3>
-                    <p class="github-handle">@SaeedNeamtallah</p>
-                    <a href="https://github.com/SaeedNeamtallah" target="_blank" rel="noopener" class="github-follow-btn">
-                        <i class="fab fa-github"></i> Follow on GitHub
-                    </a>
-                </div>
-                <div class="github-stats-area">
-                    <div class="github-contributions">
-                        <div class="contributions-header">
-                            <h4>Contribution Activity</h4>
-                            <span>Last 12 months</span>
-                        </div>
-                        <div class="contribution-grid">
-                            <div class="contribution-cell level-2"></div>
-                            <div class="contribution-cell level-1"></div>
-                            <div class="contribution-cell level-3"></div>
-                            <div class="contribution-cell level-4"></div>
-                            <div class="contribution-cell level-2"></div>
-                            <div class="contribution-cell level-1"></div>
-                            <div class="contribution-cell"></div>
-                            <div class="contribution-cell level-3"></div>
-                            <div class="contribution-cell level-2"></div>
-                            <div class="contribution-cell level-4"></div>
-                            <div class="contribution-cell level-1"></div>
-                            <div class="contribution-cell level-2"></div>
-                            <div class="contribution-cell level-3"></div>
-                            <div class="contribution-cell"></div>
-                            <div class="contribution-cell level-1"></div>
-                            <div class="contribution-cell level-4"></div>
-                            <div class="contribution-cell level-2"></div>
-                            <div class="contribution-cell level-3"></div>
-                            <div class="contribution-cell level-1"></div>
-                            <div class="contribution-cell level-2"></div>
-                            <div class="contribution-cell"></div>
-                            <div class="contribution-cell level-4"></div>
-                            <div class="contribution-cell level-3"></div>
-                            <div class="contribution-cell level-1"></div>
-                            <div class="contribution-cell level-2"></div>
-                            <div class="contribution-cell level-4"></div>
-                            <div class="contribution-cell level-3"></div>
-                            <div class="contribution-cell level-2"></div>
-                            <div class="contribution-cell level-1"></div>
-                            <div class="contribution-cell level-3"></div>
-                            <div class="contribution-cell"></div>
-                            <div class="contribution-cell level-2"></div>
-                            <div class="contribution-cell level-4"></div>
-                            <div class="contribution-cell level-1"></div>
-                            <div class="contribution-cell level-2"></div>
-                            <div class="contribution-cell level-3"></div>
-                        </div>
-                    </div>
-                    <div class="github-stats-grid">
-                        <div class="github-stat-card">
-                            <i class="fas fa-code-branch"></i>
-                            <h4>20+</h4>
-                            <p>Repositories</p>
-                        </div>
-                        <div class="github-stat-card">
-                            <i class="fas fa-star"></i>
-                            <h4>50+</h4>
-                            <p>Stars Earned</p>
-                        </div>
-                        <div class="github-stat-card">
-                            <i class="fas fa-code"></i>
-                            <h4>500+</h4>
-                            <p>Commits</p>
-                        </div>
-                        <div class="github-stat-card">
-                            <i class="fas fa-users"></i>
-                            <h4>10+</h4>
-                            <p>Collaborators</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <section class="contact scroll-reveal" id="contact">
         <div class="container">
