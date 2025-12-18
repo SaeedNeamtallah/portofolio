@@ -2099,34 +2099,49 @@
         }
 
         @media (max-width: 640px) {
-            section { padding: 4rem 1.2rem; }
-            nav .container { padding: 0 1.25rem; }
-            .hero-content h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
-            .btn { width: auto; min-width: 180px; justify-content: center; }
-            .projects-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-            .skills-grid, .certificates-grid, .testimonials-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-            .stat-number { font-size: 2.5rem; }
+            section { padding: 4.5rem 1.5rem; }
+            nav .container { padding: 0 1.5rem; }
+            .hero-content h1 { font-size: clamp(2.2rem, 7vw, 3rem); }
+            .hero-description { font-size: 1rem; }
+            .hero-tags { gap: 0.6rem; }
+            .tag { padding: 0.5rem 1rem; font-size: 0.9rem; }
+            .btn { width: auto; min-width: 160px; padding: 0.9rem 1.5rem; font-size: 0.95rem; justify-content: center; }
+            .hero-buttons { gap: 0.8rem; }
+            .projects-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+            .skills-grid, .certificates-grid, .testimonials-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+            .skills-compact-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .stat-number { font-size: 2.8rem; }
             .github-stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .section-title { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+            .section-subtitle { font-size: 1rem; }
             
             /* Experience mobile */
             .experience-left {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-direction: row;
+                align-items: center;
+                gap: 1.2rem;
             }
             .experience-logo {
-                width: 60px;
-                height: 60px;
+                width: 70px;
+                height: 70px;
             }
-            .experience-right h3 { font-size: 1.25rem; }
+            .experience-right h3 { font-size: 1.3rem; }
             
             /* Achievements mobile */
-            .achievement-content h3 { font-size: 1.5rem; }
-            .achievement-stats { grid-template-columns: 1fr; gap: 1rem; }
-            .achievement-badge { width: 80px; height: 80px; }
-            .achievement-badge span:first-child { font-size: 1.5rem; }
+            .achievement-content h3 { font-size: 1.6rem; }
+            .achievement-stats { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+            .achievement-badge { width: 90px; height: 90px; }
+            .achievement-badge span:first-child { font-size: 1.6rem; }
             
             /* Certificates mobile */
-            .certificates-grid { grid-template-columns: 1fr; }
+            .certificates-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+            
+            /* About section */
+            .about-content { gap: 2rem; }
+            .highlight-item { padding: 1.3rem; }
+            
+            /* Contact section */
+            .contact-card { padding: 1.2rem; }
         }
     </style>
 </head>
@@ -2178,7 +2193,7 @@
                     <a href="#projects" class="btn btn-primary">
                         View My Work <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="./saeed_cv_ai_eng.pdf" download target="_blank" rel="noopener" class="btn btn-secondary">
+                    <a href="./saeed_cv_ai_eng.pdf" id="downloadCvBtn" class="btn btn-secondary">
                         <i class="fas fa-download"></i> Download CV
                     </a>
                 </div>
@@ -2983,6 +2998,27 @@
 
         if (statsSection) {
             statsObserver.observe(statsSection);
+        }
+
+        // CV Download - Mobile Compatible
+        const downloadCvBtn = document.getElementById('downloadCvBtn');
+        if (downloadCvBtn) {
+            downloadCvBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pdfUrl = './saeed_cv_ai_eng.pdf';
+                // Try to trigger download, fallback to opening in new tab for iOS
+                const link = document.createElement('a');
+                link.href = pdfUrl;
+                link.download = 'Saeed_Neamatallah_CV.pdf';
+                link.target = '_blank';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                // Fallback: open in new window after small delay if download didn't work
+                setTimeout(() => {
+                    window.open(pdfUrl, '_blank');
+                }, 300);
+            });
         }
 
         // Project Filters
