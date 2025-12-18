@@ -2102,9 +2102,9 @@
             section { padding: 4rem 1.2rem; }
             nav .container { padding: 0 1.25rem; }
             .hero-content h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
-            .btn { width: 100%; justify-content: center; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .skills-grid, .certificates-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .btn { width: auto; min-width: 180px; justify-content: center; }
+            .projects-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+            .skills-grid, .certificates-grid, .testimonials-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
             .stat-number { font-size: 2.5rem; }
             .github-stats-grid { grid-template-columns: repeat(2, 1fr); }
             
@@ -2178,7 +2178,7 @@
                     <a href="#projects" class="btn btn-primary">
                         View My Work <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="saeed_cv_ai_eng.pdf" download class="btn btn-secondary">
+                    <a href="./saeed_cv_ai_eng.pdf" download target="_blank" rel="noopener" class="btn btn-secondary">
                         <i class="fas fa-download"></i> Download CV
                     </a>
                 </div>
