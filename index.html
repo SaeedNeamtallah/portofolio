@@ -2099,8 +2099,8 @@
         }
 
         @media (max-width: 640px) {
-            section { padding: 4.5rem 1.5rem; }
-            nav .container { padding: 0 1.5rem; }
+            section { padding: 4rem 1.2rem; }
+            nav .container { padding: 0 1.25rem; }
             
             /* Base font size increase */
             body { font-size: 1.2rem; }
@@ -2111,13 +2111,13 @@
             .hero-description { font-size: 1.4rem; line-height: 1.8; }
             .hero-tags { gap: 0.8rem; }
             .tag { padding: 0.7rem 1.4rem; font-size: 1.2rem; }
-            .btn { width: auto; min-width: 180px; padding: 1.2rem 2rem; font-size: 1.3rem; justify-content: center; }
-            .hero-buttons { gap: 1rem; }
+            .btn { width: 100%; padding: 1.2rem 2rem; font-size: 1.3rem; justify-content: center; }
+            .hero-buttons { gap: 1rem; flex-direction: column; }
             
-            /* Grids */
-            .projects-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-            .skills-grid, .certificates-grid, .testimonials-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-            .skills-compact-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            /* Grids - single column */
+            .projects-grid { grid-template-columns: 1fr; }
+            .skills-grid, .certificates-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .skills-compact-grid { grid-template-columns: 1fr; gap: 1rem; }
             .stat-number { font-size: 4rem; }
             .stat-label { font-size: 1.4rem; }
             .github-stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2133,13 +2133,12 @@
             
             /* Experience mobile */
             .experience-left {
-                flex-direction: row;
-                align-items: center;
-                gap: 1.2rem;
+                flex-direction: column;
+                align-items: flex-start;
             }
             .experience-logo {
-                width: 80px;
-                height: 80px;
+                width: 60px;
+                height: 60px;
             }
             .experience-right h3 { font-size: 1.8rem; }
             .experience-right p { font-size: 1.3rem; }
@@ -2153,12 +2152,12 @@
             /* Achievements mobile */
             .achievement-content h3 { font-size: 2.2rem; }
             .achievement-content p { font-size: 1.3rem; }
-            .achievement-stats { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-            .achievement-badge { width: 100px; height: 100px; }
-            .achievement-badge span:first-child { font-size: 2rem; }
+            .achievement-stats { grid-template-columns: 1fr; gap: 1rem; }
+            .achievement-badge { width: 80px; height: 80px; }
+            .achievement-badge span:first-child { font-size: 1.5rem; }
             
             /* Certificates mobile */
-            .certificates-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+            .certificates-grid { grid-template-columns: 1fr; }
             .certificate-body h3 { font-size: 1.5rem; }
             .cert-category { font-size: 1.1rem; }
             .cert-issuer, .cert-date { font-size: 1.2rem; }
