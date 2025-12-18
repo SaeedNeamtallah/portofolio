@@ -2101,19 +2101,35 @@
         @media (max-width: 640px) {
             section { padding: 4.5rem 1.5rem; }
             nav .container { padding: 0 1.5rem; }
-            .hero-content h1 { font-size: clamp(2.2rem, 7vw, 3rem); }
-            .hero-description { font-size: 1rem; }
-            .hero-tags { gap: 0.6rem; }
-            .tag { padding: 0.5rem 1rem; font-size: 0.9rem; }
-            .btn { width: auto; min-width: 160px; padding: 0.9rem 1.5rem; font-size: 0.95rem; justify-content: center; }
-            .hero-buttons { gap: 0.8rem; }
+            
+            /* Base font size increase */
+            body { font-size: 1.2rem; }
+            
+            /* Hero section */
+            .hero-content h1 { font-size: clamp(3rem, 10vw, 4.5rem); }
+            .hero-subtitle { font-size: 1.8rem; }
+            .hero-description { font-size: 1.4rem; line-height: 1.8; }
+            .hero-tags { gap: 0.8rem; }
+            .tag { padding: 0.7rem 1.4rem; font-size: 1.2rem; }
+            .btn { width: auto; min-width: 180px; padding: 1.2rem 2rem; font-size: 1.3rem; justify-content: center; }
+            .hero-buttons { gap: 1rem; }
+            
+            /* Grids */
             .projects-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
             .skills-grid, .certificates-grid, .testimonials-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
             .skills-compact-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-            .stat-number { font-size: 2.8rem; }
+            .stat-number { font-size: 4rem; }
+            .stat-label { font-size: 1.4rem; }
             .github-stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .section-title { font-size: clamp(1.8rem, 5vw, 2.5rem); }
-            .section-subtitle { font-size: 1rem; }
+            
+            /* Section headers */
+            .section-title { font-size: clamp(2.5rem, 8vw, 3.5rem); }
+            .section-subtitle { font-size: 1.4rem; }
+            
+            /* About section */
+            .about-text p { font-size: 1.4rem; }
+            .highlight-content h4 { font-size: 1.4rem; }
+            .highlight-content p { font-size: 1.2rem; }
             
             /* Experience mobile */
             .experience-left {
@@ -2122,26 +2138,46 @@
                 gap: 1.2rem;
             }
             .experience-logo {
-                width: 70px;
-                height: 70px;
+                width: 80px;
+                height: 80px;
             }
-            .experience-right h3 { font-size: 1.3rem; }
+            .experience-right h3 { font-size: 1.8rem; }
+            .experience-right p { font-size: 1.3rem; }
+            .experience-date { font-size: 1.2rem; }
+            .exp-skill-tag { font-size: 1.1rem; }
+            
+            /* Skills section */
+            .skill-compact-card h4 { font-size: 1.5rem; }
+            .skill-compact-list { font-size: 1.2rem; }
             
             /* Achievements mobile */
-            .achievement-content h3 { font-size: 1.6rem; }
+            .achievement-content h3 { font-size: 2.2rem; }
+            .achievement-content p { font-size: 1.3rem; }
             .achievement-stats { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-            .achievement-badge { width: 90px; height: 90px; }
-            .achievement-badge span:first-child { font-size: 1.6rem; }
+            .achievement-badge { width: 100px; height: 100px; }
+            .achievement-badge span:first-child { font-size: 2rem; }
             
             /* Certificates mobile */
             .certificates-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-            
-            /* About section */
-            .about-content { gap: 2rem; }
-            .highlight-item { padding: 1.3rem; }
+            .certificate-body h3 { font-size: 1.5rem; }
+            .cert-category { font-size: 1.1rem; }
+            .cert-issuer, .cert-date { font-size: 1.2rem; }
             
             /* Contact section */
-            .contact-card { padding: 1.2rem; }
+            .about-content { gap: 2rem; }
+            .highlight-item { padding: 1.3rem; }
+            .contact-card { padding: 1.4rem; }
+            .contact-card-content h4 { font-size: 1.4rem; }
+            .contact-card-content p { font-size: 1.2rem; }
+            .contact-cta-text { font-size: 2rem; }
+            .contact-intro-text { font-size: 1.3rem; }
+            
+            /* Navigation */
+            .logo { font-size: 1.8rem; }
+            nav ul li a { font-size: 1.3rem; }
+            
+            /* Footer */
+            footer p { font-size: 1.2rem; }
         }
     </style>
 </head>
