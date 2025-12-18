@@ -443,39 +443,220 @@
             }
         }
 
-        .about { background: var(--bg); }
-        .about-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; align-items: start; }
-        .about-text p { color: var(--gray); margin-bottom: 1.25rem; font-size: 1.05rem; }
-
-        .about-highlights { display: grid; gap: 1.4rem; }
-        .highlight-item {
-            display: flex;
-            gap: 1rem;
-            background: var(--white);
-            border-radius: 18px;
-            padding: 1.5rem;
-            box-shadow: 0 18px 48px -24px rgba(15, 23, 42, 0.2);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.6s ease forwards;
+        .about { 
+            background: var(--bg); 
+            position: relative;
+            overflow: hidden;
         }
 
-        .highlight-item:nth-child(1) { animation-delay: 0.1s; }
-        .highlight-item:nth-child(2) { animation-delay: 0.2s; }
-        .highlight-item:nth-child(3) { animation-delay: 0.3s; }
+        .about-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        /* About Main Content */
+        .about-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image-section {
+            position: relative;
+        }
+
+        .about-image-container {
+            position: relative;
+            max-width: 380px;
+            margin: 0 auto;
+        }
+
+        .about-image-container::before {
+            content: '';
+            position: absolute;
+            inset: -15px;
+            background: var(--gradient-1);
+            border-radius: 30px;
+            opacity: 0.15;
+            transform: rotate(-3deg);
+        }
+
+        .about-image-container::after {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            background: var(--gradient-3);
+            border-radius: 30px;
+            opacity: 0.1;
+            transform: rotate(3deg);
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 24px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 25px 60px rgba(15, 23, 42, 0.2);
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+
+        .about-status-badge {
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            background: var(--white);
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 2;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
+            50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+        }
+
+        .about-text-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .about-text-section h3 span {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-text-section p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 1.25rem;
+        }
+
+        .about-text-section p strong {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .about-cta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* About Stats Row */
+        .about-stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .about-stat-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+            border: 1px solid rgba(99, 102, 241, 0.08);
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .about-stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.12);
+            border-color: rgba(99, 102, 241, 0.15);
+        }
+
+        .about-stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 1rem;
+            font-size: 1.3rem;
+            color: var(--white);
+        }
+
+        .about-stat-icon.icon-1 { background: var(--gradient-1); }
+        .about-stat-icon.icon-2 { background: var(--gradient-3); }
+        .about-stat-icon.icon-3 { background: var(--gradient-4); }
+        .about-stat-icon.icon-4 { background: var(--gradient-5); }
+
+        .about-stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            margin-bottom: 0.3rem;
+        }
+
+        .about-stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* About responsive */
+        @media (max-width: 968px) {
+            .about-main {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                text-align: center;
+            }
+            .about-image-container {
+                max-width: 280px;
+            }
+            .about-cta {
+                justify-content: center;
+            }
+            .about-stats-row {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        .highlight-item:hover { transform: translateY(-6px); }
-        .highlight-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--gradient-1); color: var(--white); display: grid; place-items: center; font-size: 1.5rem; }
-        .highlight-content h4 { margin-bottom: 0.4rem; }
-        .highlight-content p { margin: 0; color: var(--gray); }
+        @media (max-width: 640px) {
+            .about-wrapper { gap: 2rem; }
+            .about-image-container { max-width: 200px; }
+            .about-image { border-radius: 20px; }
+            .about-status-badge {
+                bottom: -10px;
+                right: -10px;
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+            }
+            .about-text-section h3 { font-size: 1.5rem; }
+            .about-text-section p { font-size: 0.95rem; }
+            .about-stats-row { gap: 1rem; }
+            .about-stat-card { padding: 1.5rem 1rem; border-radius: 16px; }
+            .about-stat-icon { width: 40px; height: 40px; font-size: 1.1rem; }
+            .about-stat-number { font-size: 1.6rem; }
+            .about-stat-label { font-size: 0.75rem; }
+            .about-cta { flex-direction: column; }
+            .about-cta .btn { width: 100%; }
+        }
 
         /* Project Filters */
         .project-filters {
@@ -2102,34 +2283,32 @@
             section { padding: 4rem 1.2rem; }
             nav .container { padding: 0 1.25rem; }
             
-            /* Base font size increase */
-            body { font-size: 1.2rem; }
-            
             /* Hero section */
-            .hero-content h1 { font-size: clamp(3rem, 10vw, 4.5rem); }
-            .hero-subtitle { font-size: 1.8rem; }
-            .hero-description { font-size: 1.4rem; line-height: 1.8; }
-            .hero-tags { gap: 0.8rem; }
-            .tag { padding: 0.7rem 1.4rem; font-size: 1.2rem; }
-            .btn { width: 100%; padding: 1.2rem 2rem; font-size: 1.3rem; justify-content: center; }
-            .hero-buttons { gap: 1rem; flex-direction: column; }
+            .hero-content h1 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+            .hero-subtitle { font-size: 1rem; }
+            .hero-description { font-size: 0.95rem; line-height: 1.7; }
+            .hero-tags { gap: 0.5rem; }
+            .tag { padding: 0.4rem 0.9rem; font-size: 0.85rem; }
+            .btn { width: 100%; padding: 0.9rem 1.5rem; font-size: 1rem; justify-content: center; }
+            .hero-buttons { gap: 0.8rem; flex-direction: column; }
             
             /* Grids - single column */
             .projects-grid { grid-template-columns: 1fr; }
-            .skills-grid, .certificates-grid, .testimonials-grid { grid-template-columns: 1fr; }
-            .skills-compact-grid { grid-template-columns: 1fr; gap: 1rem; }
-            .stat-number { font-size: 4rem; }
-            .stat-label { font-size: 1.4rem; }
+            .skills-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .certificates-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .skills-compact-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .stat-number { font-size: 2rem; }
+            .stat-label { font-size: 0.85rem; }
             .github-stats-grid { grid-template-columns: repeat(2, 1fr); }
             
             /* Section headers */
-            .section-title { font-size: clamp(2.5rem, 8vw, 3.5rem); }
-            .section-subtitle { font-size: 1.4rem; }
+            .section-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+            .section-subtitle { font-size: 0.95rem; }
             
             /* About section */
-            .about-text p { font-size: 1.4rem; }
-            .highlight-content h4 { font-size: 1.4rem; }
-            .highlight-content p { font-size: 1.2rem; }
+            .about-text p { font-size: 0.95rem; }
+            .highlight-content h4 { font-size: 1rem; }
+            .highlight-content p { font-size: 0.9rem; }
             
             /* Experience mobile */
             .experience-left {
@@ -2137,46 +2316,49 @@
                 align-items: flex-start;
             }
             .experience-logo {
-                width: 60px;
-                height: 60px;
+                width: 50px;
+                height: 50px;
             }
-            .experience-right h3 { font-size: 1.8rem; }
-            .experience-right p { font-size: 1.3rem; }
-            .experience-date { font-size: 1.2rem; }
-            .exp-skill-tag { font-size: 1.1rem; }
+            .experience-right h3 { font-size: 1.1rem; }
+            .experience-right p { font-size: 0.95rem; }
+            .experience-date { font-size: 0.85rem; }
+            .exp-skill-tag { font-size: 0.8rem; }
             
             /* Skills section */
-            .skill-compact-card h4 { font-size: 1.5rem; }
-            .skill-compact-list { font-size: 1.2rem; }
+            .skill-compact-card { padding: 1rem; }
+            .skill-compact-card h4 { font-size: 0.85rem; }
+            .skill-compact-list { font-size: 0.75rem; }
             
             /* Achievements mobile */
-            .achievement-content h3 { font-size: 2.2rem; }
-            .achievement-content p { font-size: 1.3rem; }
+            .achievement-content h3 { font-size: 1.4rem; }
+            .achievement-content p { font-size: 0.95rem; }
             .achievement-stats { grid-template-columns: 1fr; gap: 1rem; }
-            .achievement-badge { width: 80px; height: 80px; }
-            .achievement-badge span:first-child { font-size: 1.5rem; }
+            .achievement-badge { width: 60px; height: 60px; }
+            .achievement-badge span:first-child { font-size: 1.2rem; }
             
             /* Certificates mobile */
-            .certificates-grid { grid-template-columns: 1fr; }
-            .certificate-body h3 { font-size: 1.5rem; }
-            .cert-category { font-size: 1.1rem; }
-            .cert-issuer, .cert-date { font-size: 1.2rem; }
+            .certificate-card { padding: 0; }
+            .certificate-body { padding: 0.8rem; }
+            .certificate-body h3 { font-size: 0.8rem; }
+            .cert-category { font-size: 0.65rem; padding: 0.2rem 0.5rem; }
+            .cert-issuer, .cert-date { font-size: 0.7rem; }
+            .certificate-header { height: 80px; }
             
             /* Contact section */
             .about-content { gap: 2rem; }
             .highlight-item { padding: 1.3rem; }
-            .contact-card { padding: 1.4rem; }
-            .contact-card-content h4 { font-size: 1.4rem; }
-            .contact-card-content p { font-size: 1.2rem; }
-            .contact-cta-text { font-size: 2rem; }
-            .contact-intro-text { font-size: 1.3rem; }
+            .contact-card { padding: 1.2rem; }
+            .contact-card-content h4 { font-size: 1rem; }
+            .contact-card-content p { font-size: 0.9rem; }
+            .contact-cta-text { font-size: 1.4rem; }
+            .contact-intro-text { font-size: 1rem; }
             
             /* Navigation */
-            .logo { font-size: 1.8rem; }
-            nav ul li a { font-size: 1.3rem; }
+            .logo { font-size: 1.3rem; }
+            nav ul li a { font-size: 1rem; }
             
             /* Footer */
-            footer p { font-size: 1.2rem; }
+            footer p { font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -2257,40 +2439,37 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">I build intelligent systems that transform ambitious ideas into tangible products.</p>
+                <p class="section-subtitle">Building intelligent systems that transform ideas into products</p>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm an AI Engineer who thrives on creating <strong>production-ready machine learning solutions</strong>. My specialization
-                        spans <strong>Large Language Models</strong>, <strong>Retrieval-Augmented Generation</strong>, intelligent agents, and
-                        <strong>end-to-end ML system design</strong>. I love turning research breakthroughs into dependable products.
-                    </p>
-                    <p>
-                        I architect solutions that scale, measure their impact, and iterate quickly. Whether it is fine-tuning foundation
-                        models, operationalizing pipelines, or crafting agent workflows, I focus on delivering measurable value.
-                    </p>
-                </div>
-                <div class="about-highlights">
-                    <div class="highlight-item">
-                        <div class="highlight-icon"><i class="fas fa-brain"></i></div>
-                        <div class="highlight-content">
-                            <h4>Full-Stack ML</h4>
-                            <p>Research, experimentation, evaluation, and deployment with modern tooling.</p>
+            
+            <div class="about-wrapper">
+                <!-- Main Content -->
+                <div class="about-main">
+                    <div class="about-image-section">
+                        <div class="about-image-container">
+                            <img src="mypic.jpg" alt="Saeed Neamatallah" class="about-image">
+                            <div class="about-status-badge">
+                                <span class="status-dot"></span>
+                                Open to Work
+                            </div>
                         </div>
                     </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon"><i class="fas fa-robot"></i></div>
-                        <div class="highlight-content">
-                            <h4>LLM Excellence</h4>
-                            <p>Prompt engineering, fine-tuning, agent frameworks, and safety evaluation.</p>
-                        </div>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon"><i class="fas fa-lightbulb"></i></div>
-                        <div class="highlight-content">
-                            <h4>Innovation Mindset</h4>
-                            <p>Rapid prototyping of ideas with a bias for practical, impactful outcomes.</p>
+                    
+                    <div class="about-text-section">
+                        <p>
+                            I'm an AI Engineer specializing in <strong>Large Language Models</strong>, 
+                            <strong>Retrieval-Augmented Generation</strong>, and <strong>production ML systems</strong>. 
+                            I turn cutting-edge research into reliable, scalable products.
+                        </p>
+                        <p>
+                            Whether it's fine-tuning foundation models, building intelligent agents, 
+                            or architecting end-to-end ML pipelines — I focus on delivering 
+                            measurable impact with clean, maintainable code.
+                        </p>
+                        <div class="about-cta">
+                            <a href="Saeed_Neamatallah_CV.pdf" class="btn btn-secondary" download>
+                                <i class="fas fa-download"></i> Download CV
+                            </a>
                         </div>
                     </div>
                 </div>
